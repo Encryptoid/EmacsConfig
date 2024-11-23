@@ -72,14 +72,14 @@
   )
 )
 
-(evil-define-key 'normal 'evil-mode
-  (kbd "<SPC> o")
-  '("Insert Line Below" .
-     (lambda () (interactive)
-	   (evil-set-marker ?*) (evil-open-below 1) (evil-normal-state 1) (evil-goto-mark ?*)
-     )
-  )
-)
+;(evil-define-key 'normal 'evil-mode
+  ;(kbd "<SPC> o")
+  ;'("Insert Line Below" .
+     ;(lambda () (interactive)
+	   ;(evil-set-marker ?*) (evil-open-below 1) (evil-normal-state 1) (evil-goto-mark ?*)
+     ;)
+  ;)
+;)
 
 (evil-define-key 'normal 'evil-mode
   (kbd "<SPC> O")
@@ -116,3 +116,6 @@
      )
   )
 )
+
+(load-pack "rainbow-delimiters")
+(rainbow-delimiters-mode t)

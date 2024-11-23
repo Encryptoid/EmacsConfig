@@ -32,7 +32,7 @@
 (defun sesh-save ()
   (interactive)
   (desktop-save lee-sesh)
-  ;(message "Saved desktop file.")
+  (message "Saved desktop file.")
   )
 
 (defun sesh-load ()
@@ -41,19 +41,24 @@
   (message "Loaded desktop file.")
   )
 
-(advice-add 'levil-save :after #'sesh-save)
+;(advice-add 'levil-save :after #'sesh-save)
+
+(evil-define-key '(normal emacs) 'evil-mode
+  (kbd ", w")
+  (cons "Sesh" (make-sparse-keymap)))
 
 (evil-define-key 'normal 'evil-mode
   (kbd ", w l")
-  '("Load Sesh" .
+  '("Load" .
      (lambda () (interactive)
 	   (sesh-load)
      )
   )
 )
+
 (evil-define-key 'normal 'evil-mode
   (kbd ", w s")
-  '("Load Sesh" .
+  '("Save" .
      (lambda () (interactive)
 	   (sesh-save)
      )

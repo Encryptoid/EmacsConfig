@@ -39,12 +39,15 @@
   )
 (setq mode-line-format (get-mode-line))
 
+
+(load-pack "rainbow-mode")
+
 (defface my-tab-bar-face
   '((t))
   "Custom face for tab-bar formatting.")
 (set-face-attribute 'my-tab-bar-face nil
                     :weight 'bold
-                    :foreground "#ffdd33")
+                    :foreground "#2a5045")
 
 
 (setq tab-bar-separator "    ")
@@ -52,7 +55,7 @@
 
 (setq tab-bar-time-fmt-sec "%H:%M:%S")
 (setq tab-bar-time-fmt-min "%H:%M")
-(setq tab-bar-date-fmt "%a, %b %e")
+(setq tab-bar-date-fmt "%A - %b %d")
 (setq tab-bar-time-fmt tab-bar-time-fmt-min)
 
 (setq tab-bar-refresh-sec 5)
@@ -90,7 +93,7 @@
           tab-bar-separator
           (lambda () (propertize "Your Custom String" 'face 'my-tab-bar-face))
           tab-bar-separator
-          (lambda () (propertize (concat "  " (format-time-string tab-bar-date-fmt))
+          (lambda () (propertize (concat "  " (format-time-string tab-bar-date-fmt) "  ")
                       'face 'my-tab-bar-face))
 		  tab-bar-separator
           (lambda () (propertize (concat " " (format-time-string tab-bar-time-fmt))

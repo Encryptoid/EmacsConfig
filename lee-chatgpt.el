@@ -39,3 +39,6 @@
 (use-package chatgpt
   :defer t
   :bind ("C-c q" . chatgpt-query))
+(setq display-buffer-base-action
+      '((display-buffer-same-window))
+	  )

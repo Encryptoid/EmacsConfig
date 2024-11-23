@@ -2,13 +2,14 @@
 (setq backup-directory-alist '((".*" . "~/temp/emacs/backup-files/")))
 (setq custom-file "~/.emacs.d/custom-vars.el")
 
-
 ;; Frame
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 (add-to-list 'default-frame-alist '(left . 2000))
 (add-to-list 'default-frame-alist '(undecorated . t))
 
-(setq initial-buffer-choice 'open-init-file)
+;(setq initial-buffer-choice 'lee-init-file)
+(setq inhibit-startup-screen t)
+(setq initial-buffer-choice nil)
 (setq inhibit-x-resources nil)
 (setq window-combination-resize t)
 
@@ -33,9 +34,9 @@
 (fset 'yes-or-no-p 'y-or-n-p)
 (save-place-mode 1)
 
-(setq-default indent-tabs-mode t)
+;(setq-default indent-tabs-mode t)
 (setq-default tab-always-indent nil)
-(setq-default tab-width 4)
+(setq-default tab-width 2)
 
 (setq visible-bell nil)
 ;(set-message-beep 'silent)

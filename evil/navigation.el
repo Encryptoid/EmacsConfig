@@ -25,9 +25,9 @@
   ;(interactive)
   ;(evil-next-line 5))
 ;(define-key evil-visual-state-map (kbd "j") 'godown)
-
 (evil-define-key '(normal emacs) 'evil-mode
   (kbd "M-n") (lambda () (interactive) (tab-bar-new-tab))
+  (kbd "M-c") (lambda () (interactive) (tab-bar-close-tab))
   (kbd "M-h") (lambda () (interactive) (tab-bar-switch-to-prev-tab))
   (kbd "M-l") (lambda () (interactive) (tab-bar-switch-to-next-tab))
   )

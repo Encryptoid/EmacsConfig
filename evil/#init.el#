@@ -24,8 +24,8 @@
 
 (load-pack "evil-goggles")
 (evil-goggles-mode)
-(setq-default evil-goggles-pulse nil) 
-(setq-default evil-goggles-duration 0.100)
+(setq-default evil-goggles-pulse t) 
+(setq-default evil-goggles-duration 0.200)
 
 ;; TODO Set colours
 (custom-set-faces

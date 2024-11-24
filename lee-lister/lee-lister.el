@@ -1,5 +1,4 @@
 (defun lister-new (list)
-;(when (minibufferp)
   (let* (
 	  (existing (lee-json-read lister-workspace-json))
     (new-record (list (mapcar (lambda (item)
@@ -21,7 +20,7 @@
   (interactive)
   (lee-json-write (lister-new lee-list-workspace) lee-workspace-json-file)
 )
-;(lister-workspace-new)
+(lister-workspace-new)
 
 
 

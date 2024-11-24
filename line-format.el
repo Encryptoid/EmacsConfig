@@ -40,14 +40,12 @@
 (setq mode-line-format (get-mode-line))
 
 
-(load-pack "rainbow-mode")
-
 (defface my-tab-bar-face
   '((t))
   "Custom face for tab-bar formatting.")
 (set-face-attribute 'my-tab-bar-face nil
                     :weight 'bold
-                    :foreground "#2a5045")
+                    :foreground "#56992d")
 
 
 (setq tab-bar-separator "    ")
@@ -81,6 +79,11 @@
 
 (message (format "%s" show-seconds))
 
+(defun tab-bar-sep ()
+	(propertize "    "
+    'face 'my-tab-bar-face)
+)
+
 (defun tab-bar-update ()
   (setq tab-bar-format
         '(
@@ -90,12 +93,12 @@
                          (tab-bar-format-tabs))) ;; Else use tabs
 		  (format "%s" (tab-bar-format-tabs))
           tab-bar-format-align-right
-          tab-bar-separator
-          (lambda () (propertize "Your Custom String" 'face 'my-tab-bar-face))
-          tab-bar-separator
+          ;tab-bar-separator
+          ;(lambda () (propertize "Your Custom String" 'face 'my-tab-bar-face))
+          tab-bar-sep
           (lambda () (propertize (concat "  " (format-time-string tab-bar-date-fmt) "  ")
                       'face 'my-tab-bar-face))
-		  tab-bar-separator
+		      tab-bar-separator
           (lambda () (propertize (concat " " (format-time-string tab-bar-time-fmt))
                       'face 'my-tab-bar-face))
 		  tab-bar-separator

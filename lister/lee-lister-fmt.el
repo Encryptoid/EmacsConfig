@@ -51,7 +51,7 @@
 			  )
 				(push (cons rec-str rec) fmts)
 			)
-		)
+		)
 		fmts
 	)
 )

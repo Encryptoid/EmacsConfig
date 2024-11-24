@@ -1,6 +1,7 @@
 ;; Files
 (setq backup-directory-alist '((".*" . "~/temp/emacs/backup-files/")))
 (setq custom-file "~/.emacs.d/custom-vars.el")
+(load custom-file)
 
 ;; Frame
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
@@ -46,3 +47,10 @@
 (display-line-numbers-mode 1)
 (setq-default display-line-numbers 'relative)
 
+;; Monitors
+(setq lee-monitor-1 "DisplayPort-0")
+(setq lee-monitor-2 "HDMI-A-0")
+(setq lee-monitor-3 "HDMI-A-1")
+
+;; Show Monitor details
+;(display-monitor-attributes-list)

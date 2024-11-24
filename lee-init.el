@@ -24,20 +24,26 @@
 ;; Must come after evil for saving feature
 (load-file "~/.config/emacs/lee-sesh.el")
 
+;; Handy packages: rainbow-mode, etc.
+(load-file "~/.config/emacs/lee-handy-packages.el")
+
 ;; Handy keybinds
 (load-file "~/.config/emacs/lee-files.el")
 
 ;; Custom Plugins
+(load-file "~/.config/emacs/lee-messages.el")
 (load-file "~/.config/emacs/fzf.el")
 (load-file "~/.config/emacs/completion.el")
 (load-file "~/.config/emacs/lee-harpoon.el")
+
+(load-conf "lister/lee-lister-init.el")
 
 (setq-default cwd "~/.config/emacs/")
 ;
 ; (init-file-open)
 ; (sesh-load)
 ;
-; (setq server-port 9000)
-; (server-start)
+;(setq server-port 9000)
+;(server-start)
 ; (message "%s" (emacs-init-time))
 ; (setq which-key-show-remaining-keys nil) ;; Not working?

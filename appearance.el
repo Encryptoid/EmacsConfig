@@ -1,6 +1,17 @@
 ;(set-frame-font "CaskaydiaMono Nerd Font-13")
+(set-frame-font "Iosevka Nerd Font-13.5")
+ 
+;(set-face-attribute 'default nil
+                    ;:font "Jetbrains Mono Nerd Font-12")
 
-(set-frame-font "Jetbrains Mono Nerd Font-13")
+(defun my-set-default-font (frame)
+  "Set the default font for the FRAME."
+  (set-face-attribute 'default frame
+                      ;:font "Jetbrains Mono Nerd Font-12"))
+                      :font "Iosevka Nerd Font-13.5"))
+
+(add-hook 'after-make-frame-functions 'my-set-default-font)
+;(set-frame-font "Jetbrains Mono Nerd Font-13")
 ;(set-frame-font "FiraCode Nerd Font-13")
 ;(set-frame-font "Hack Nerd Font Mono-13")
 (setq-default line-spacing 0.05)
@@ -8,12 +19,6 @@
 ;(load-theme 'gruber-darker t)
 ;(load-pack "modus-themes" "modus-vivendi")
 ;(load-pack "modus-themes" "modus-vivendi")
-
-;
-; CHANGELOG.org
-; COPYING
-; doc
-;
 
 ;(load-theme-pack "modus-themes")
 

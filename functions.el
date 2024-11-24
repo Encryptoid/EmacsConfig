@@ -7,5 +7,6 @@
 (defun init-file-load ()
   (interactive)
   (load-file lee-init-file)
-
 )
+
+(defun test-fun () (interactive) (message "Testing!"))

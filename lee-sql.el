@@ -1,6 +1,7 @@
 ;; https://github.com/magit/emacsql
 
 (load-pack "emacsql")
+
 (require 'emacsql-sqlite)
 
 (setq db (emacsql-sqlite "~/database/testql.db"))

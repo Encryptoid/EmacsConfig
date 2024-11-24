@@ -1,0 +1,35 @@
+;; -*- lexical-binding: t -*-
+
+(defun lister--new-tab ()
+  (interactive)
+  (setf (lister-curr-new-tab lister-curr) t) 
+  (setf (lister-curr-success lister-curr) t) 
+  (exit-minibuffer)
+)
+
+(defun lister--new-keymap (lister)
+	(interactive)
+	(let (map (make-sparse-keymap))
+    (evil-define-key 'insert minibuffer-local-map (kbd "C-t")	lister--new-tab)
+		(define-key minibuffer-local-map (kbd "C-<return>") 'lister--new-tab)
+
+    (evil-define-key 'insert minibuffer-local-map (kbd "C-n")
+			(lambda ()
+				(interactive)
+				(run-at-time lister--v-minibuffer-exit-delay nil (lambda ()
+														 (lister-new)))
+				(exit-minibuffer)
+			)
+		)
+
+    (evil-define-key 'insert minibuffer-local-map (kbd "C-x")
+			(lambda ()
+				(interactive)
+				(run-at-time lister--v-minibuffer-exit-delay nil (lambda ()
+														 (lister-delete)))
+				(exit-minibuffer)
+			)
+		)
+
+	)
+)

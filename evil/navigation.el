@@ -7,13 +7,18 @@
   "H" (lambda () (interactive) (evil-backward-char 15))
   "L" (lambda () (interactive) (evil-forward-char 15)))
 
-(evil-define-motion myevil-next-visual-line (count)
+(evil-define-motion lee-next-visual-line ()
   :type exclusive
-  ;(let ((line-move-visual t))
-    (evil-next-line 10))
-  ;)
+  (evil-next-line 5)
+)
 
-(define-key evil-visual-state-map (kbd "J") 'myevil-next-visual-line)
+(evil-define-motion lee-prev-visual-line ()
+  :type exclusive
+  (evil-next-line -5)
+)
+
+(define-key evil-visual-state-map (kbd "J") 'lee-next-visual-line)
+(define-key evil-visual-state-map (kbd "K") 'lee-prev-visual-line)
 
 ;(evil-define-key '(normal visual emacs) help-mode-map (kbd "gl") 
   ;(lambda () (interactive) (message "hi")))

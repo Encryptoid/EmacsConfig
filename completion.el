@@ -87,4 +87,6 @@
 (setq orderless-matching-styles '(orderless-literal
                                   orderless-regexp
                                   orderless-initialism
-                                  orderless-flex)) ;; Flex provides flexible fuzzy matching
+                                  ;orderless-flex ;; Flex provides flexible fuzzy matching
+																)
+) 

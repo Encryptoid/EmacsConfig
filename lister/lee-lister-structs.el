@@ -18,6 +18,16 @@
   name
   fmt
   action
+	(new-tab 'nil)
+	key
   fields
-	new-tab
+)
+
+(cl-defstruct lister-curr
+	lister
+	list
+  sel
+	fmt-map
+	(new-tab 'nil)
+	(success 'nil)
 )

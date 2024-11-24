@@ -22,6 +22,10 @@
   )
 )
 
+(evil-define-key 'normal 'evil-mode (kbd "Y")
+	(lambda () (interactive) (evil-yank (point) (line-end-position)))
+)
+
 ;; Paste in visual mode
 (evil-define-key '(visual visual-line) 'evil-mode
   (kbd "p")

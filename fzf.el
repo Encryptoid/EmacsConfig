@@ -68,7 +68,7 @@
   )
 
 (evil-define-key '(normal emacs) 'evil-mode
-  (kbd "g l") 'consult-recent-file
+  (kbd "g k") 'consult-recent-file
 )
 
 (defun test-rg (&optional input dir)
@@ -104,9 +104,7 @@
 (evil-define-key 'normal 'evil-mode
   (kbd "<SPC> f f")
   '("Ripgrep cwd" .
-     (lambda () (interactive)
-	   (counsel-rg "" cwd "")
-     )
+	   consult-ripgrep
   )
 )
 

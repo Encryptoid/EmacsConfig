@@ -17,20 +17,23 @@
   "Keyboard mappings for UK and US layouts."
 )
 
+
 (defvar lee-kbd-layout 'UK
   "Current keyboard layout. Can be either 'us or 'uk."
 )
 
 (defun lee-kbd (logical-key)
   "Get the actual keybinding for LOGICAL-KEY based on the current layout."
+	(interactive)
   (let* ((layout-map (cdr (assoc lee-kbd-layout lee-uk-us-map)))
          (key (cdr (assoc logical-key layout-map))))
     (message "Resolved key for %s: %s" logical-key (or key logical-key))
-    (kbd (or key
+    ;(kbd
+		 (or key
 						 logical-key
-             ;(error "Key %s not defined for layout %s" logical-key lee-kbd-layout))
+             ;(error "Key %s not defined for layout %s" logical-key lee-kbd-layout)
 				 )
-		)
+		;)
 	)
 )
 

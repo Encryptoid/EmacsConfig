@@ -9,7 +9,7 @@
   )
 )
 
-(defun lister-user-input (name type init)
+(defun lister-user-input (name type init &optional prompt-fmt)
   (if (functionp init)
 	(funcall init)
 	  (cond
@@ -19,13 +19,13 @@
 	  	(cond
 		  ((eq type 'str)
             ;(read-from-minibuffer (format "Enter %s: " name))
-		   (completing-read (format "Enter %s: " name) '(""))
+		   (completing-read (format (or prompt-fmt "Enter %s: ") name) nil)
 		  )
 		  ((eq type 'dir)
             (read-directory-name (format "Select %s: " name))
 		  )
 		  ((eq type 'bool)
-		   (read-bool name)
+		   (lister-read-bool name)
 		  )
 		)
 	  )

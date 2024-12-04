@@ -5,7 +5,7 @@
 
 
 (evil-define-key 'normal 'evil-mode
-  (kbd "gj") 'evil-switch-to-windows-last-buffer
+  (kbd "g l") 'project-find-file
 )
 
 ;; Go to end of yank

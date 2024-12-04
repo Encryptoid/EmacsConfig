@@ -6,7 +6,8 @@
   name
   (type :type my-enum-type)
   (preview 't)
-  (init 't)
+  (init t)
+	(display t)
 )
 
 ;; (setq tester (make-field-template :name "Test" :type 'str :preview t))
@@ -21,6 +22,7 @@
 	(new-tab 'nil)
 	key
   fields
+	binds
 )
 
 (cl-defstruct lister-curr
@@ -29,5 +31,5 @@
   sel
 	fmt-map
 	(new-tab 'nil)
-	(success 'nil)
+	(success nil)
 )

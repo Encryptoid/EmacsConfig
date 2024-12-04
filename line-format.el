@@ -40,76 +40,54 @@
 (setq mode-line-format (get-mode-line))
 
 
-(defface my-tab-bar-face
-  '((t))
-  "Custom face for tab-bar formatting.")
-(set-face-attribute 'my-tab-bar-face nil
-                    :weight 'bold
-                    :foreground "#56992d")
+;(defface face-dark-lime
+  ;'((t))
+  ;"Custom face for tab-bar formatting.")
+;(set-face-attribute 'face-dark-lime nil
+                    ;:weight 'bold
+										;:height 50
+                    ;:foreground "#56992d"
+										;;:box nil
+										;;:width 'ultra-expanded
+										;)
+			
+(setq-default tab-bar-auto-width-min '(50 4))
+(tab-bar-auto-width nil)
 
-
-(setq tab-bar-separator "    ")
 (message (format "%s" (length (tab-bar-tabs))))
 
-(setq tab-bar-time-fmt-sec "%H:%M:%S")
-(setq tab-bar-time-fmt-min "%H:%M")
-(setq tab-bar-date-fmt "%A - %b %d")
-(setq tab-bar-time-fmt tab-bar-time-fmt-min)
+;(defun tab-bar-sep ()
+	;(propertize "    "
+    ;'face 'face-dark-lime)
+;)
 
-(setq tab-bar-refresh-sec 5)
-(setq show-seconds nil)
+;(defun tab-bar-update ()
+  ;(setq tab-bar-format
+        ;'(
+          ;tab-bar-format-history
+          ;(lambda () (if (eq 1 (length (tab-bar-tabs)))
+                         ;(propertize " " 'face 'face-dark-lime) ;; Blank if 1 tab
+                         ;(tab-bar-format-tabs))) ;; Else use tabs
+		  ;(format "%s" (tab-bar-format-tabs))
+          ;tab-bar-format-align-right
+          ;;tab-bar-separator
+          ;;(lambda () (propertize "Your Custom String" 'face 'my-tab-bar-face))
+          ;tab-bar-sep
+          ;;tab-bar-separator
+          ;(lambda () (propertize (concat "  " (format-time-string tab-bar-date-fmt) "  ")
+                      ;'face 'face-dark-white))
+          ;tab-bar-sep
+          ;(lambda () (propertize (concat " " (format-time-string tab-bar-time-fmt))
+                      ;'face 'face-dark-white))
+          ;tab-bar-sep
+          ;)))
 
-(defun seconds ()
-  (interactive)
-  (if show-seconds
-      (progn
-		(message "Hiding seconds")
-        (setq show-seconds nil)
-        (setq tab-bar-time-fmt tab-bar-time-fmt-min)
-	    (setq tab-bar-refresh-sec 5)
-		)
-    (progn
-	  (message "Showing seconds")
-      (setq show-seconds t)
-      (setq tab-bar-time-fmt tab-bar-time-fmt-sec)
-	  (setq tab-bar-refresh-sec 0.5)
-	)
-  )
-)
-
-(message (format "%s" show-seconds))
-
-(defun tab-bar-sep ()
-	(propertize "    "
-    'face 'my-tab-bar-face)
-)
-
-(defun tab-bar-update ()
-  (setq tab-bar-format
-        '(
-          tab-bar-format-history
-          (lambda () (if (eq 1 (length (tab-bar-tabs)))
-                         (propertize " " 'face 'my-tab-bar-face) ;; Blank if 1 tab
-                         (tab-bar-format-tabs))) ;; Else use tabs
-		  (format "%s" (tab-bar-format-tabs))
-          tab-bar-format-align-right
-          ;tab-bar-separator
-          ;(lambda () (propertize "Your Custom String" 'face 'my-tab-bar-face))
-          tab-bar-sep
-          (lambda () (propertize (concat "  " (format-time-string tab-bar-date-fmt) "  ")
-                      'face 'my-tab-bar-face))
-		      tab-bar-separator
-          (lambda () (propertize (concat " " (format-time-string tab-bar-time-fmt))
-                      'face 'my-tab-bar-face))
-		  tab-bar-separator
-          )))
 (setq tab-bar-position t)
 
 (message (format "%s" (tab-bar-format-tabs)))
-(tab-bar-update)
 
-(setq mode-line-format "Hi")
-(tab-bar-mode 1)
+;(setq mode-line-format "Hi")
+(tab-bar-mode t)
 
 ;(global-tab-line-mode)
 
@@ -123,3 +101,5 @@
   (force-mode-line-update t))
 
 (run-with-timer 0 tab-bar-refresh-sec 'tab-bar-refresh)
+
+

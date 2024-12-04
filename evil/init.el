@@ -17,8 +17,8 @@
 
 ;;https://github.com/cofi/evil-numbers
 (load-pack "evil-numbers")
-(evil-define-key 'normal 'evil-mode (kbd "C-a") 'evil-numbers/inc-at-pt)
-(evil-define-key 'normal 'evil-mode (kbd "C-x") 'evil-numbers/dec-at-pt)
+(evil-define-key 'normal 'evil-mode (kbd "C-i") 'evil-numbers/inc-at-pt)
+(evil-define-key 'normal 'evil-mode (kbd "C-S-i") 'evil-numbers/dec-at-pt)
 ;; Test 5
 ;; Test 6
 
@@ -34,7 +34,6 @@
  '(evil-goggles-paste-face ((t (:inherit diff-added))))
  '(evil-goggles-yank-face ((t (:inherit diff-refine-added))))
 )
-
 
 (load-file "~/.config/emacs/evil/navigation.el")
 (load-file "~/.config/emacs/evil/text-edit.el")

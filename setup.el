@@ -48,9 +48,9 @@
 (setq-default display-line-numbers 'relative)
 
 ;; Monitors
-(setq lee-monitor-1 "DisplayPort-0")
-(setq lee-monitor-2 "HDMI-A-0")
-(setq lee-monitor-3 "HDMI-A-1")
+(setq lee-monitor-mid "DisplayPort-0")
+(setq lee-monitor-left "HDMI-A-1")
+(setq lee-monitor-right "HDMI-A-0")
 
 ;; Show Monitor details
 ;(display-monitor-attributes-list)

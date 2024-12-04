@@ -1,4 +1,5 @@
-(setq lee-messages-monitor lee-monitor-3)
+
+(setq lee-messages-monitor lee-monitor-left)
 
 (defun lee-messages--launch (m-name)
 	(select-frame (make-frame-on-monitor lee-messages-monitor))

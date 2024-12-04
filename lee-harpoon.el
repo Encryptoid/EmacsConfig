@@ -9,7 +9,7 @@
 ;; Set
 (defun harpoon-set (index key-code)
 	(message "Binding %s" key-code)
-  (evil-define-key 'normal 'global key-code
+  (evil-define-key 'normal 'global (kbd key-code)
     (lambda ()
       (interactive)
       (let* ((var (intern (format "lee-harpoon-%d" index)))
@@ -21,10 +21,12 @@
 	)
 )
 
-(lee-kbd "C-S-2")
+;(lee-kbd "C-S-3")
+;(lee-kbd "C-£")
 
 (harpoon-set 1 (lee-kbd "C-S-1"))
 (harpoon-set 2 (lee-kbd "C-S-2"))
+;; TODO Change lee-kbd to lee-kbd-all that will get all C-S-3 mappings and map them
 (harpoon-set 3 (lee-kbd "C-S-3"))
 (harpoon-set 4 (lee-kbd "C-S-4"))
 (harpoon-set 5 (lee-kbd "C-S-5"))
@@ -45,9 +47,9 @@
 	)
 )
 
-(harpoon-go 1 (lee-kbd "C-1"))
-(harpoon-go 2 (lee-kbd "C-2"))
-(harpoon-go 3 (lee-kbd "C-3"))
-(harpoon-go 4 (lee-kbd "C-4"))
-(harpoon-go 5 (lee-kbd "C-5"))
+(harpoon-go 1 (kbd "C-1"))
+(harpoon-go 2 (kbd "C-2"))
+(harpoon-go 3 (kbd "C-3"))
+(harpoon-go 4 (kbd "C-4"))
+(harpoon-go 5 (kbd "C-5"))
 

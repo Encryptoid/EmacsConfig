@@ -1,8 +1,11 @@
+;; -*- lexical-binding: t -*-
+
 (defun lee-json-write (data filepath)
-  "Write DATA as pretty-printed JSON to FILEPATH."
+	(interactive)
   (let ((json-object-type 'alist) 
         (json-array-type 'vector)) 
     (with-temp-buffer
+			(message "Writing JSON File: %s, Contents: %s" filepath data)
       (insert (json-encode data))
       (json-pretty-print-buffer)
       (write-region (point-min) (point-max) filepath))))
@@ -21,3 +24,5 @@
 		(json-to-list (json-read-file file-path))
   )
 )
+
+;(lee-json-read "/home/l/.config/emacs-local/lister/Workspace.json")

@@ -10,3 +10,8 @@
 )
 
 (defun test-fun () (interactive) (message "Testing!"))
+
+(defun str (n)
+  "Convert the number N to a string."
+  (number-to-string n))
+

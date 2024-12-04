@@ -54,6 +54,7 @@
 (setq neo-window-width 35)
 (setq neo-theme (if (display-graphic-p) 'icons 'arrow))
 (setq neo-show-hidden-files t)
+(setq delete-by-moving-to-trash t)
 
 ;(neotree-dir "~/.config/emacs/")
 
